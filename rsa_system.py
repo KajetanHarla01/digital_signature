@@ -35,7 +35,7 @@ def generate_keys_params(trn_list, key_length=1024, e=65537):
     p = prevprime(p)
     q = nextprime(q)
     
-    # Compute private exponent - d
+    # Compute n and d
     n = p*q
     phi_n = (p-1)*(q-1)
     d = pow(e, -1, phi_n)
