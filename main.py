@@ -35,7 +35,7 @@ def get_file(dir):
     return dir + "/" + files[file_choose - 1]
 
 def get_private_numbers():
-    path = "resources/private_key.pem"
+    path = "keys/private_key.pem"
     if not os.path.exists(path):
         print("Error: private key not found")
         exit()
@@ -51,7 +51,7 @@ def get_private_numbers():
     return private_numbers
 
 def get_public_numbers():
-    path = "resources/public_key.pem"
+    path = "keys/public_key.pem"
     if not os.path.exists(path):
         print("Error: public key not found")
         exit()
@@ -81,7 +81,7 @@ def generate_keys():
     print("Keys have been generated")
     
     # Write keys to file
-    public_key_file = open("resources/public_key.pem", "wb")
+    public_key_file = open("keys/public_key.pem", "wb")
     public_key = public_numbers.public_key(default_backend())
     public_key_pem = public_key.public_bytes(
         encoding=serialization.Encoding.PEM,
@@ -90,7 +90,7 @@ def generate_keys():
     public_key_file.write(public_key_pem)
     public_key_file.close()
 
-    private_key_file = open("resources/private_key.pem", "wb")
+    private_key_file = open("keys/private_key.pem", "wb")
     private_key_pem = private_numbers.private_bytes(
         encoding=serialization.Encoding.PEM,
         format=serialization.PrivateFormat.PKCS8,
