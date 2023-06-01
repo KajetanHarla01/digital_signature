@@ -12,4 +12,4 @@ To generate private and public keys, the program use <b>.wav</b> sound files whi
 Files to sign have to be in <b>files</b> directory. The signature is written to <b>sign.dat</b> file in the <b>signature</b> directory.
 
 <h2>Signature validation</h2>
-To validate a signature, you have to choose a signed file from the <b>files</b> directory. The file <b>sign.dat</b> with signature is used in validation process. Then in the console, the result of the validation is printed.
+To validate a signature, you have to choose a signed file from the <b>files</b> directory. The file <b>sign.dat</b> with the signature is used in the validation process. Then in the console, the result of the validation is printed.
